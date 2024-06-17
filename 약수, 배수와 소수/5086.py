@@ -1,12 +1,21 @@
-N,M = map(int, input().split())
 
-list = []
 
-for i in range(1,N+1):
-    if N%i == 0:
-        list.append(i)
+while True:
+    N = int(input())
+    
+    if N == -1:
+        break
 
-if len(list) >= M:
-    print(list[M-1])
-else:
-    print(0)
+    list = []
+    sum = 0
+    for i in range(1,N):
+        if N%i == 0:
+            list.append(i)
+            sum += i
+    
+    if sum == N:
+        print(N, " = ", " + ".join(str(i) for i in list), sep="")
+    else:
+        print(str(N) + ' is NOT perfect.')
+    
+    
